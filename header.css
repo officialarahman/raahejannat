@@ -74,6 +74,7 @@ nav .navbar {
 @media (max-width: 450px) {
   .navbar .logo img {
     height: 10vh;
+    width: 10vh;
   }
 }
 
