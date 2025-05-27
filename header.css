@@ -71,6 +71,12 @@ nav .navbar {
   height: 15vh;
 }
 
+@media (max-width: 450px) {
+  .navbar .logo img {
+    height: 10vh;
+  }
+}
+
 nav .navbar .nav-links {
   line-height: 70px;
   height: 100%;
