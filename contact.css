@@ -1,0 +1,62 @@
+body {
+  font-family: Arial, sans-serif;
+  justify-content: center;
+  align-items: center;
+  padding-top: 350px;
+  background-color: rgba(250, 250, 199, 0.395);
+}
+
+.container {
+  margin-bottom: 2rem;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  background: #fff;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 500px;
+  }
+}
+
+.container img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.scroll-left {
+ height: 50px;	
+ overflow: hidden;
+ position: relative;
+ background: rgb(0, 66, 8);
+ color: rgb(255, 255, 255);
+ border: 1px solid rgb(255, 255, 255);
+}
+
+.scroll-left p {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+ /* Starting position */
+ transform:translateX(100%);
+ /* Apply animation to this element */
+ animation: scroll-left 15s linear infinite;
+}
+
+/* Move it (define the animation) */
+@keyframes scroll-left {
+ 0%   {
+ transform: translateX(100%); 		
+ }
+ 100% {
+ transform: translateX(-100%); 
+ }
+}
