@@ -75,7 +75,7 @@ nav .navbar {
   .navbar .logo img {
     height: 10vh;
     width: 10vh;
-    position: absolute;
+    position: relative;
   }
 }
 
