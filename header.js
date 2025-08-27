@@ -1,21 +1,29 @@
 let lastScrollTop = 0;
+let scrollUpDistance = 0; // Track how much user scrolled up
 const header = document.getElementById('header');
 
 window.addEventListener('scroll', function () {
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-  // Always show header until scrolled more than 200px
   if (scrollTop < 200) {
+    // Always show header until scrolled more than 200px
     header.classList.remove('header-hidden');
+    scrollUpDistance = 0; // reset tracker
   } else if (scrollTop > lastScrollTop) {
     // Scrolling down
     header.classList.add('header-hidden');
+    scrollUpDistance = 0; // reset tracker when scrolling down
   } else if (scrollTop < lastScrollTop) {
-    // Scrolling up (immediate reveal)
-    header.classList.remove('header-hidden');
+    // Scrolling up
+    scrollUpDistance += (lastScrollTop - scrollTop);
+
+    if (scrollUpDistance >= 250) {
+      header.classList.remove('header-hidden');
+      scrollUpDistance = 0; // reset after revealing
+    }
   }
 
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or overscroll
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // avoid negative
 });
 
 
