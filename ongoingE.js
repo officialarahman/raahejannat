@@ -4,4 +4,9 @@ function toggleContent(header) {
 
     content.classList.toggle('open');
     arrow.classList.toggle('rotate');
+
+}
+
+function closeAnnouncement() {
+  document.getElementById("reservation-announcement").style.display = "none";
 }
