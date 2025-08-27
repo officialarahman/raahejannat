@@ -38,4 +38,55 @@
     max-height: 100%;
     opacity: 1;
     margin-top: 10px;
+
+}
+
+/* Banner styling */
+.announcement-banner {
+  position: relative;
+  background: linear-gradient(90deg, #009bce, #036181);
+  color: #fff;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  animation: slideDown 0.7s ease-out;
+}
+
+/* Icon */
+.announcement-banner .icon {
+  font-size: 22px;
+  animation: pulse 1.2s infinite;
+}
+
+/* Close button */
+.announcement-banner .close-btn {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.announcement-banner .close-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
 }
